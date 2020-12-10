@@ -30,4 +30,6 @@ jobs:
       before_install:
         - if [[ -d $HOME/docker ]]; then ls $HOME/docker/*.tar.gz | xargs -I {file} sh -c "zcat {file} | docker load"; fi
       script:
+        - docker-compose run api rake db:create 
+        - docker-compose run api rake db:migrate
         - docker-compose run api bundle exec rails test

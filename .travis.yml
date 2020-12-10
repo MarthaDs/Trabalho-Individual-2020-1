@@ -18,3 +18,6 @@ jobs:
         - docker-compose run api rake db:migrate
       after_script:
         - docker-compose down
+    - stage: test-api
+      script:
+        - docker-compose run api bundle exec rails test

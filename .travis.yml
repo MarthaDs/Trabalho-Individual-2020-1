@@ -29,7 +29,7 @@ jobs:
     - stage: code-quality
       env:
         global:
-          - CC_TEST_REPORTER_ID=ABC123
+          - CC_TEST_REPORTER_ID=ba374f9b14633ae4fd7c61530fbf11f7e1f9c5b3c20abbea94033a99f46803a2
       language: ruby
       rvm:
       - 2.5.7
@@ -38,6 +38,6 @@ jobs:
       - chmod +x ./cc-test-reporter
       - ./cc-test-reporter before-build
       script:
-      - bundle exec rspec
+      - docker-compose run bundle exec rspec
       after_script:
       - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

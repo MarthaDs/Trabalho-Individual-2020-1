@@ -11,7 +11,7 @@ services:
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - ./api:/home/Trabalho-Individual-2020-1/api/
-      - node_modules_api:/home/Trabalho-Individual-2020-1/api/node_modules
+      - .api/node_modules:/home/Trabalho-Individual-2020-1/api/node_modules
     ports:
       - "3000:3000"
     depends_on:
@@ -21,7 +21,7 @@ services:
     command: yarn dev
     volumes:
       - ./client:/home/Trabalho-Individual-2020-1/client/
-      - node_modules_client:/home/Trabalho-Individual-2020-1/client/node_modules
+      - ./client/node_modules:/home/Trabalho-Individual-2020-1/client/node_modules
     ports:
       - "8080:8080"
     depends_on:

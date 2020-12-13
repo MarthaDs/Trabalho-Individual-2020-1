@@ -6,10 +6,6 @@ jobs:
         - docker
       env:
         DOCKER_COMPOSE_VERSION: 1.27.4
-       cache:
-        directories:
-          - /home/Trabalho-Individual-2020-1/api/node_modules
-          - /home/Trabalho-Individual-2020-1/client/node_modules
       before_install:
         - sudo rm /usr/local/bin/docker-compose
         - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose

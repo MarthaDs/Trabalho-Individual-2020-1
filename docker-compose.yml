@@ -11,7 +11,7 @@ services:
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - ./api:/home/Trabalho-Individual-2020-1/api/
-      - .api/node_modules:/home/Trabalho-Individual-2020-1/api/node_modules
+      - ./api/vendor:/home/Trabalho-Individual-2020-1/api/vendor
     ports:
       - "3000:3000"
     depends_on:

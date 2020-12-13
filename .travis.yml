@@ -25,11 +25,11 @@ jobs:
         - docker-compose run api bundle exec rails test
     - stage: test-client
       script:
-        - docker-compose run client yarn run test:unit
+        - docker-compose client yarn run test:unit
     - stage: code-quality
       env:
         global:
-          - CC_TEST_REPORTER_ID=ABC123
+          - CC_TEST_REPORTER_ID=ba374f9b14633ae4fd7c61530fbf11f7e1f9c5b3c20abbea94033a99f46803a2
       language: ruby
       rvm:
       - 2.5.7

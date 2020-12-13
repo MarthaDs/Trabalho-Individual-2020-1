@@ -25,7 +25,7 @@ jobs:
         - docker-compose run api bundle exec rails test
     - stage: test-client
       script:
-        - docker-compose run client yarn run test:unit
+        - docker-compose client yarn run test:unit
     - stage: code-quality
       env:
         global:

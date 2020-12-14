@@ -41,5 +41,7 @@ jobs:
         - docker-compose run api rake db:migrate
       script:
       - docker-compose run api bundle exec rake
+      - docker-compose run client yarn run test:unit
       after_script:
-      - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi 
+        - ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.api.json api/coverage/.resultset.json # Format backend coverage
+        - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.client.json client/coverage/lcov.info  # Format frontend coverage

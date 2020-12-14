@@ -23,13 +23,25 @@ Client: ` docker-compose run client yarn run test:unit `
 
 ## Containerização
 
+Os dockerfiles podem ser encontrados em: 
+  - API : /Trabalho-Individual-2020-1/api/
+  - CLIENT: /Trabalho-Individual-2020-1/client/
+
 ## Integração contínua
+
 ### Build
-Construção completa do ambiente;
-###Testes
-Os testes automatizados da aplicação devem ser executados;
+
+Realizado com TravisCI
+
+### Testes
+
+Realizado com TravisCI
+
 ### Coleta de métricas
-Deverá ser realizada a integração com algum serviço externo de coleta de métricas de qualidade;
 
-### 3. Deploy contínuo (Extra)
+Realizado com TravisCi e codeClimate, sendo api com simplecov e o client com lvoc.
+- Code Climate: https://codeclimate.com/github/MarthaDs/Trabalho-Individual-2020-1
 
+### Deploy contínuo (Extra)
+
+Não realizado

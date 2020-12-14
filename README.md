@@ -39,7 +39,8 @@ Realizado com TravisCI
 
 ### Coleta de métricas
 
-Realizado com TravisCi, sendo api com simplecov e o client com lvoc.
+Realizado com TravisCi e codeClimate, sendo api com simplecov e o client com lvoc.
+- Code Climate: https://codeclimate.com/github/MarthaDs/Trabalho-Individual-2020-1
 
 ### Deploy contínuo (Extra)
 

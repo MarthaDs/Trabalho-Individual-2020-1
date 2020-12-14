@@ -31,7 +31,7 @@ gem 'rubocop-rails', require: false
 
 gem 'rubocop-performance', require: false
 
-gem 'simplecov', require: false, group: :test
+gem 'simplecov', '~> 17.01', require: false, group: :test
 
 gem 'httparty'
 

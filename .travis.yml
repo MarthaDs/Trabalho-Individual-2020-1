@@ -40,7 +40,7 @@ jobs:
         - docker-compose run api rake db:create 
         - docker-compose run api rake db:migrate
       script:
-      - docker-compose run api bundle exec rubocop -DESP
+      - docker-compose run api bundle exec rspec
       - docker-compose run api bundle exec rake
       after_script:
       - ./cc-test-reporter format-coverage -t simplecov -o api/coverage*/.results.json

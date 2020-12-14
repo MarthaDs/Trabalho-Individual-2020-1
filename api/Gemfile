@@ -31,6 +31,8 @@ gem 'rubocop-rails', require: false
 
 gem 'rubocop-performance', require: false
 
+gem 'simplecov', require: false, group: :test
+
 gem 'httparty'
 
 gem 'shorturl'

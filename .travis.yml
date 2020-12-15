@@ -45,3 +45,9 @@ jobs:
       after_script:
         - ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.api.json api/coverage/.resultset.json # Format backend coverage
         - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.client.json client/coverage/lcov.info  # Format frontend coverage
+    - stage: deploy
+      deploy:
+        provider: heroku
+        api_key:
+          secure: "Rr4RHHifSB3kXan4vZYrkI9ROB7Y7AXOr7Uu8SPbx0D0zLrURJHx+pOd2V/MIyzHsm6lKeVFU+le4RyGIHdya4HK0Qo+0pqCpddoWRiTZb7IQ4o8cxkNkGF0NMS1JQmLR/kiLw1aJuC41ToixithJti6UAZfn/2T2Jo3ap9ilcUYcKOzYFERu/7RmLQhMeNETFhtjcav7iXOSnyTtnRtM25uq58I2HfzwYdpaiNWNo3VFt+x3qV1AR77cBTDp+2cNhughyY5ILP1IoajEg/1GY6fP1vXTeGJS9XCLNEd4vw4nINhK2F8kNT6rUQ6CznZkkUGVWu0lIv8nmg03SfFjnxHJ62SwgMAKj1yj1oAIChcAhX6PrMfesRNhDlCM7rZpurYCY0PNLFADvZNqWcjT/N31zsfr0K6u6CmxI2seSzz5oFJD8DzrFk8ybocDUZc5JEOibuTQ6PGGBzxvlXiNYkgLc5Orm+o87cPwe/NiHjuugJmhN2dafwme/KPSuSMv1aUnFe56AXuwZ5Mh7m0GJlijszMjVOgug7QCOETGUwUhx7ZyuEI91QVml2hPO72Z7KbOazOQ/ti934nYPAA/qEmbpfNHDoXh5Jsd+cz8/No/t6eimqiC82PIrDqJvU5TqzF1JH1F/pKE1Dewj2mRexskmUamibXhj3Q+w9iyGs="
+        on: master

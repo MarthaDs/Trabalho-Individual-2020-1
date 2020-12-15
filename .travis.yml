@@ -46,6 +46,21 @@ jobs:
         - ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.api.json api/coverage/.resultset.json # Format backend coverage
         - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.client.json client/coverage/lcov.info  # Format frontend coverage
     - stage: deploy
+      sudo: required
+      services:
+        - docker
+      env:
+        DOCKER_COMPOSE_VERSION: 1.27.4
+      before_install:
+        - sudo rm /usr/local/bin/docker-compose
+        - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+        - chmod +x docker-compose
+        - sudo mv docker-compose /usr/local/bin
+      before_script:
+        - docker-compose up -d --build
+      script:
+        - docker-compose run api rake db:create 
+        - docker-compose run api rake db:migrate
       deploy:
         provider: heroku
         api_key:
